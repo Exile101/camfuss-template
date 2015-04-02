@@ -2457,3 +2457,113 @@ input[type=checkbox]:checked + label:before {
     text-align: center;
     line-height: 15px;
 }
+
+/* //////////////// Pulse ////////////////////// */
+
+
+@-webkit-keyframes pulse 
+  {       
+    0% {-webkit-transform: scale(0); opacity: 0;}
+    8% {-webkit-transform: scale(0); opacity: 0;}
+    15% {-webkit-transform: scale(0.1); opacity: 1;}
+    30% {-webkit-transform: scale(0.5); opacity: 1;}
+    100% {opacity: 0; -webkit-transform: scale(1);}
+  }
+
+  @-moz-keyframes pulse 
+  {       
+    0% {-moz-transform: scale(0); opacity: 0;}
+    8% {-moz-transform: scale(0); opacity: 0;}
+    15% {-moz-transform: scale(0.1); opacity: 1;}
+    30% {-moz-transform: scale(0.5); opacity: 1;}
+    100% {opacity: 0; -moz-transform: scale(1);}
+  }
+  
+  .pulse_holder
+  {
+    display: block;
+    position: relative;
+    margin-top: 100px;
+
+
+  }
+
+  .pulse_holder .pulse_marker 
+  {
+    background-color: #ee6557;
+    font-size: 3em;
+    color: #fff;
+    text-align: center;
+    padding: 0.5em;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+  }
+    .pulse_holder .pulse_marker:hover
+    {
+        color: #ee6557;
+        background: none;
+    }
+  .pulse_holder .pulse_rays 
+  {
+    margin: 0 auto;
+    border-radius: 1000px;
+    position: absolute;
+    right: -90%;
+    top: -80%;
+    z-index: 10;
+    background-color: transparent;
+    opacity: 0.1;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(238, 101, 87, 1);
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -o-border-radius: 100px;
+    -ms-border-radius: 100px;
+    border-radius: 100px;
+    /* Giving Animation Function */
+    -webkit-animation: pulse 2s linear infinite;
+    -moz-animation: pulse 2s linear infinite; 
+    border-image: initial;
+  }
+  .uploadroom
+  {
+    color: #222;
+    padding: 1em;
+    display: none;
+  }
+
+  .uploadroom input[type="text"]
+  {
+    background: none;
+    border-bottom: 1px solid #ee6557;
+    border-top: none;
+    border-right: none;
+    border-left: 1px solid #ee6557;
+    margin: 1em;
+    margin-left: 0;
+    padding: 0.5em 1em;
+    width: 25em;
+    color: #222;
+  }
+  .uploadroom input[type="submit"]
+  {
+    background: #ee6557;
+    padding: 0.5em 1em;
+    color: #fff;
+    border: none;
+    margin-top: 1em;
+
+    transition:all 0.2s;
+    -webkit-transition:all 0.2s;
+    -moz-transition:all 0.2s;
+    -o-transition:all 0.2s;
+  }
+   .uploadroom input[type="submit"]:hover
+   {
+    background: #c63e31;
+   }
