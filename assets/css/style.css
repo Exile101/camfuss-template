@@ -234,12 +234,12 @@ ul.top-menu > li > .logout {
     position: fixed;
     z-index: 100;
     background: #2C3E50;
-/*
+
     transform:translateX(-230px);
     -webkit-transform:translateX(-230px);
     -moz-transform:translateX(-230px);
     -o-transform:translateX(-230px);
-*/
+
     transition:all 0.5s;
     -webkit-transition:all 0.5s;
     -moz-transition:all 0.5s;
@@ -909,7 +909,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 	padding: 15px;
 	text-align: center;
 	color: #989898;
-	border-bottom: 1px solid #989898;
+	border-bottom: 1px solid;
 }
 
 .box1 span {
@@ -924,15 +924,30 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .box0:hover .box1 {
 	border-bottom: 1px solid #ffffff;
 }
+.box0
+{
+    cursor: pointer;
+    transition:all 0.5s;
+    -webkit-transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -o-transition:all 0.5s;
+}
 
 .box0 p {
 	text-align: center;
 	font-size: 12px;
 	color: #f2f2f2;
+cursor: pointer;
+    transition:all 0.5s;
+    -webkit-transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -o-transition:all 0.5s;
+    
 }
 
 .box0:hover p {
-	color: #ff865c;
+	color: #111;
+    font-size: 1.2em;
 }
 
 .box0:hover {
@@ -940,6 +955,30 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.box01:hover h3,.box01:hover span
+{
+    color: #ef8686;
+}
+.box02:hover h3,.box02:hover span
+{
+    color: #5cbaf9;
+}
+.box03:hover h3,.box03:hover span
+{
+    color: #21f2be;
+}
+.box01 .box1
+{
+    border-bottom:1px solid #ee6557; 
+}
+.box02 .box1
+{
+    border-bottom: 1px solid #5cbaf9;
+}
+.box03 .box1
+{
+    border-bottom: 1px solid #21f2be;
+}
 /* MAIN CHART CONFIGURATION */
 .main-chart {
 	padding-top: 20px;
@@ -1055,7 +1094,7 @@ PANELS CONFIGURATIONS
 /*Panel Size*/
 
 .pn {
-	height: 250px;
+	min-height: 250px;
 	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -1063,7 +1102,45 @@ PANELS CONFIGURATIONS
 	box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.3);
 	
 }
-
+.interact span
+{
+    margin: 0.2em 0.7em;
+    cursor: pointer;
+}
+.interact h4
+{
+    margin-left: 0 !important;
+}
+.interact h5
+{
+    border-top: 1px solid #dbdbdb;
+    margin: 0.5em 0.5em;
+    text-align: left;
+}
+.interact h5,.interact form
+{
+    display: none;
+}
+input[name="comment"]
+{
+    max-width:400px;
+    min-width: 250px;
+    margin: 1em auto 0.1em auto;
+    background: #dfdfdf;
+    border: none;
+    padding: 5px;
+}
+button[type="submit"]
+{
+    background: #5cbaf9;
+    color: #fff;
+    border: none;
+    padding: 5px;
+}
+button[type="submit"]:hover
+{
+    background: #3e8ec4;
+}
 /*Grey Panel*/
 
 .grey-panel {
@@ -2307,7 +2384,76 @@ label {
 }
 
 .site-min-height {
-    min-height: 900px;
+    min-height: 700px;
+}
+.privacysett
+{
+
+}
+.privacysett form input[type="radio"]
+{
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    border: none;
 }
 
+label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 13px;
+    margin-top: 15px;
+}
 
+input[type=radio] {
+    display: none;
+}
+
+label:before {
+    content: "";
+    display: inline-block;
+ 
+    width: 18px;
+    height: 18px;
+ 
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background-color: #f2f2f2;
+    border: 2px solid #ee6557;
+    
+}
+
+.radio label:before {
+    border-radius: 16px;
+}
+
+input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #ee6557;
+    font-size: 36px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 24px;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.checkbox label:before {
+    border-radius: 3px;
+}
+
+input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    font-size: 18px;
+    color: #ee6557;
+    text-align: center;
+    line-height: 15px;
+}
